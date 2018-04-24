@@ -1,0 +1,25 @@
+<h1>Website</h1>
+
+<p>
+ <%= link_to "Comments", "#", id: "comments-links" %>
+</p>
+
+<section id="comments-section" data-no-turbolink>
+    <h2>test</h2>
+    <% @posts.each do |post| %>
+      <h2><%= link_to post.title, post %></h2>
+      <p><%= post.content %></p><br />
+      <p>Posted by: <%= post.user.email %></p>
+
+      <% if post.user == current_user %>
+      <small><%= link_to "Edit", edit_post_path(post) %></small>
+      <small><%= link_to "Delete", post, :data=>{:confirm => "Are you sure?"}, :method => :delete %></small>
+      <% end %>
+      <hr />
+    <% end %>
+</section>
+
+<p><%= link_to "Add New Post", new_post_path %></p>
+<p><%= link_to "Sign Up", new_user_registration_path %></p>
+<p><%= link_to "Sign In", new_user_session_path %></p>
+<p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></p>
