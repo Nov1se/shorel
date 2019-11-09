@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 
 # Adding devise for authentication
-gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise', '~> 4.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
